@@ -1,5 +1,7 @@
 class AppleStoreController < ApplicationController
+
   get '/apple-store-all' do
-    json AppleStoreService.find_all
+    json AppleStoreService.new.find_all
   end
+
 end
