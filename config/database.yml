@@ -1,0 +1,20 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: pg_username
+  password:
+  pool: 5
+
+
+development:
+  database: sinatra_development
+  <<: *defaults
+
+test:
+  database: sinatra_test
+  <<: *defaults
+
+production:
+  database: sinatra_production
+  <<: *defaults
