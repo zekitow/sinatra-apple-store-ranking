@@ -12,7 +12,9 @@ module Request
     end
 
     def reason
-      ['genreId is required.'] if @genre_id.blank?
+      messages = []
+      messages << 'genreId is required.' if @genre_id.blank?
+      messages
     end
   end
 
