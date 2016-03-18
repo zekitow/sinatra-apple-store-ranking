@@ -1,16 +1,11 @@
 require 'httparty'
 
-class AppleStoreService
+class AppleStoreBase
   include HTTParty
-  base_uri 'https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewTop?country=US&dataOnly=true&l=en&'
   headers self.headers
 
-  def find_all
-    self.class.get('genreId=6001&popId=30')
-  end
 
-  private 
-
+  private
     def self.headers
       {
         'Accept-Encoding' => 'gzip, deflate, sdch',
