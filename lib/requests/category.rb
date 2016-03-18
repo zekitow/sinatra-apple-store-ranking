@@ -16,6 +16,7 @@ module Request
       messages = []
       messages << 'genreId is required.' if @genre_id.blank?
       messages << 'monetizationType is required.' if @monetization_type.blank?
+      messages
     end
   end
 end
