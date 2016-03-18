@@ -1,32 +1,24 @@
 module ApplicationHelper
 
   def map_lookup_ids(result)
-
-    if result.is_a?(Array)
-      result.map {| object | object['adamIds']}.flatten.uniq
-    else
-      result['adamIds']
-    end
+    result.map {| object | object['adamIds']}.flatten.uniq
   end
 
-
-  def aggregate(ranking_results, aditional_infos)
+  def aggregate_elements(ranking_results, aditional_infos)
     elements = []
 
-    if ranking_results.is_a?(Array)
+    ranking_results['adamIds'].each do | trackId |
+      elements << aditional_infos.find{| el | el[:id] == trackId.to_i }
+    end
 
-      ranking_results.each do | ranking_list |
-        ranking_list['adamIds'].each do | trackId |
-          elements << aditional_infos.find{| el | el[:id] == trackId.to_i }
-        end
-      end
-      
-    else
-      
-      ranking_results['adamIds'].each do | trackId |
-        elements << aditional_infos.find{| el | el[:id] == trackId.to_i }
-      end
+    elements
+  end
 
+  def aggregate_element_lists(ranking_results, aditional_infos)
+    elements = []
+
+    ranking_results.each do | ranking_list |
+      elements << aggregate_elements(ranking_list, aditional_infos)
     end
 
     elements

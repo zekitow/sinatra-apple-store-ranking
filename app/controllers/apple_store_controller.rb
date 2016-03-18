@@ -6,7 +6,7 @@ class AppleStoreController < ApplicationController
 
     aditional_infos = AppleStoreLookup.new.find_all(map_lookup_ids(result))
 
-    json(aggregate(result, aditional_infos))
+    json(aggregate_element_lists(result, aditional_infos))
   end
 
   get '/apple-store/category/:categoryId' do
@@ -14,9 +14,9 @@ class AppleStoreController < ApplicationController
     result = AppleStoreRanking.new.find_all(params[:categoryId])
     result = result['selectedChart']
 
-    aditional_infos = AppleStoreLookup.new.find_all(map_lookup_ids(result))
+    aditional_infos = AppleStoreLookup.new.find_all(result['adamIds'])
 
-    json(aggregate(result, aditional_infos))
+    json(aggregate_elements(result, aditional_infos))
   end
 
 end
