@@ -1,7 +1,7 @@
 require 'json'
 
 class ApplicationController < Sinatra::Base
-  # helpers ApplicationHelper
+  helpers ApplicationHelper
 
   configure :production, :development do
     enable :logging
