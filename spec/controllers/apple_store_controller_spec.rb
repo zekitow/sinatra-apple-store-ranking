@@ -14,6 +14,24 @@ describe AppleStoreController do
       it { expect(JSON.parse(subject.body)).to include(expected_result) }
     end
 
+    context 'when params are valid' do
+
+      let!(:params) { { genreId: '6001' } }
+
+      it 'should return ok' do
+        VCR.use_cassette('valid ranking results') do
+          expect(subject.status).to eql(200)
+        end
+      end
+
+      it 'should return the content' do
+        VCR.use_cassette('valid ranking results') do
+          expect(JSON.parse(subject.body)).to_not be_empty
+        end
+      end
+
+    end
+
   end
 
   context 'categories' do

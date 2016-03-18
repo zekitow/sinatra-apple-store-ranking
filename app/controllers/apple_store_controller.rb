@@ -4,6 +4,7 @@ class AppleStoreController < ApplicationController
   # Search all ranking (free, grossing and paid)
   #
   get '/apple-store/by-ranking' do
+
     api_request     = Request::Ranking.new(params)
     halt_using_if_invalid(api_request)
 
