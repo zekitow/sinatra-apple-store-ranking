@@ -11,6 +11,7 @@ require 'pg'
 ENV['RACK_ENV'] ||= 'development'
 $env = ENV['RACK_ENV']
 
+Dir.glob('./lib/requests/*.rb').each { |file| require file }
 Dir.glob('./lib/services/apple_store_base.rb').each { |file| require file }
 Dir.glob('./lib/{services}/*.rb').each { |file| require file }
 Dir.glob('./app/helpers/*.rb').each { |file| require file }
