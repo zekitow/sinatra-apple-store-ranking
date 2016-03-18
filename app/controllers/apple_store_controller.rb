@@ -3,15 +3,15 @@ class AppleStoreController < ApplicationController
   get '/apple-store/ranking' do
     result = AppleStoreRanking.new.find_all(params[:categoryId])
 
-
-    adamIds = map_lookup_ids(result)
-    binding.pry
-
     if params[:categoryId].present?
-      json(result['selectedChart'])
+      result = result['selectedChart']
     else
-      json(result['topCharts'])
+      result = result['topCharts']
     end
+
+    aditional_infos = AppleStoreLookup.new.find_all(map_lookup_ids(result))
+
+    json(aggregate(result, aditional_infos))
   end
 
 end
