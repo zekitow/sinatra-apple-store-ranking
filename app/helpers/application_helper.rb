@@ -4,7 +4,7 @@ module ApplicationHelper
   # Maps all lookup ids
   #
   def map_lookup_ids(result)
-    result.map {| object | object['adamIds']}.flatten.uniq
+    result.map { | object | object['adamIds'] }.flatten.uniq
   end
 
   #
