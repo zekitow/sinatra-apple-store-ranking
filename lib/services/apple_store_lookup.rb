@@ -3,7 +3,7 @@ class AppleStoreLookup < AppleStoreBase
 
   def find_all(ids)
     results = []
-    
+
     ids.in_groups(3).each do | ids |
       query_result = self.class.get("?id=#{ids.join(',')}")
       results << parse_results(query_result)
