@@ -8,10 +8,8 @@ class AppleStoreController < ApplicationController
       api_request     = Request::Ranking.new(params)
       halt_using_if_invalid(api_request)
 
-      result          = AppleStoreRanking.new.find_by_genre(api_request)
-      aditional_infos = AppleStoreLookup.new.find_all(map_lookup_ids(result))
-
-      json(create_detailed_lists(result, aditional_infos))
+      result = AppleStore.find_by_genre(api_request)
+      json(result)
 
     rescue NotFoundException => e
       halt_not_found(e)
@@ -26,10 +24,8 @@ class AppleStoreController < ApplicationController
       api_request = Request::Category.new(params)
       halt_using_if_invalid(api_request)
 
-      result          = AppleStoreRanking.new.find_by_genre_and_monetization_type(api_request)
-      aditional_infos = AppleStoreLookup.new.find_all(result['adamIds'])
-
-      json(create_detailed_list(result, aditional_infos))
+      result = AppleStore.find_by_genre_and_monetization_type(api_request)
+      json(result)
 
     rescue NotFoundException => e
       halt_not_found(e)

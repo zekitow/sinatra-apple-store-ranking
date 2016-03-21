@@ -15,7 +15,7 @@ Dir.glob('./lib/services/apple_store_base.rb').each { |file| require file }
 Dir.glob('./lib/{services}/*.rb').each { |file| require file }
 Dir.glob('./app/helpers/*.rb').each { |file| require file }
 Dir.glob('./app/controllers/application_controller.rb').each { |file| require file }
-Dir.glob('./app/{controllers}/*.rb').each { |file| require file }
+Dir.glob('./app/{models,controllers}/*.rb').each { |file| require file }
 
 
 require 'pry' unless $env == 'production'
