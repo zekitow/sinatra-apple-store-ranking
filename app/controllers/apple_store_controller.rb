@@ -12,6 +12,7 @@ class AppleStoreController < ApplicationController
       aditional_infos = AppleStoreLookup.new.find_all(map_lookup_ids(result))
 
       json(create_detailed_lists(result, aditional_infos))
+
     rescue NotFoundException => e
       halt_not_found(e)
     end
