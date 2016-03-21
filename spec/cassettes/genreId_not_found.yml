@@ -1,0 +1,103 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewTop?country=US&dataOnly=true&genreId=1&l=en
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip, deflate, sdch
+      Accept-Language:
+      - en-US,en;q=0.8,lv;q=0.6
+      User-Agent:
+      - iTunes/11.1.1 (Windows; Microsoft Windows 7 x64 Ultimate Edition Service Pack
+        1 (Build 7601)) AppleWebKit/536.30.1
+      Accept:
+      - text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+      Cache-Control:
+      - max-age=0
+      X-Apple-Store-Front:
+      - 143441-1,17
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Apple-Jingle-Correlation-Key:
+      - 2BYZ3XEONDI2MANWLGA7QIKL4Y
+      X-Apple-Translated-Wo-Url:
+      - "/WebObjects/MZStore.woa/wa/viewTop?country=US&dataOnly=true&l=en&genreId=1"
+      Content-Type:
+      - text/xml; charset=UTF-8
+      X-Apple-Lokamai-No-Cache:
+      - 'true'
+      X-Apple-Aka-Ttl:
+      - Generated Mon Mar 21 05:10:11 PDT 2016, Expires Mon Mar 21 05:11:11 PDT 2016,
+        TTL 60s
+      X-Webobjects-Loadaverage:
+      - '0'
+      Last-Modified:
+      - Mon, 21 Mar 2016 12:10:11 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Apple-Orig-Url:
+      - https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewTop?country=US&dataOnly=true&l=en&genreId=1
+      X-Apple-Application-Site:
+      - ST11
+      Apple-Timing-App:
+      - 3 ms
+      X-Apple-Asset-Version:
+      - '0'
+      X-Apple-Request-Store-Front:
+      - 143441-1,17
+      X-Apple-Date-Generated:
+      - Mon, 21 Mar 2016 12:10:11 GMT
+      X-Apple-Application-Instance:
+      - '2002300'
+      Content-Length:
+      - '615'
+      Server:
+      - ATS/4.1.0
+      X-Apple-Ats-Cache-Key:
+      - "/17.173.38.161/80/WebObjects/MZStore.woa/wa/viewTop/iDevice/143441-1/17/https?country=US&dataOnly=true&genreId=1&l=en"
+      Cache-Control:
+      - no-transform, max-age=55
+      Expires:
+      - Mon, 21 Mar 2016 12:11:06 GMT
+      Date:
+      - Mon, 21 Mar 2016 12:10:11 GMT
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      - X-Apple-Store-Front
+      X-Apple-Partner:
+      - origin.0
+    body:
+      encoding: ASCII-8BIT
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE
+        plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+        \n\n  <plist version=\"1.0\">\n    <dict>\n       \n  \n    \n    <key>pings</key>\n<array>\n
+        \ \n  \n    <string>https://xp.apple.com/report/2/xp_its_main?code=itemNotAvailable&amp;buttons=OK&amp;baseVersion=1&amp;eventVersion=1&amp;storeFrontHeader=143441-1%2C17&amp;eventTime=1458562211795&amp;eventType=dialog&amp;message=The%20item%20you%27ve%20requested</string>\n\n
+        \ \n</array>\n\n    \n         \n  <key>failureType</key><string></string>\n
+        \ <key>customerTitleMessage</key><string>Item Not Available</string>\n  <key>customerMessage</key><string>The
+        item you&#39;ve requested is not currently available in the U.S. store.</string>\n
+        \ \n  <key>m-allowed</key><false/>\n  \n  \n  \n  \n  \n  \n       \n       \n
+        \   \n      <key>dialog</key>\n      <dict>\n    \n    \n    <key>m-allowed</key><false/>\n
+        \   \n    \n    \n    <key>message</key><string>Item Not Available</string>\n
+        \   <key>explanation</key><string>The item you&#39;ve requested is not currently
+        available in the U.S. store.</string>\n    <key>defaultButton</key><string>ok</string>\n\n
+        \   \n    <key>okButtonString</key><string>OK</string>\n    \n\n    \n    \n\n
+        \   \n    \n\n    \n    \n    \n    \n</dict>\n\n    \n    \n    \n      <key>cancel-purchase-batch</key><true/>\n
+        \   \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n
+        \ \n\n\n    \n    </dict>\n  </plist>\n  \n\n\n\n\n        "
+    http_version: 
+  recorded_at: Mon, 21 Mar 2016 12:10:11 GMT
+recorded_with: VCR 3.0.1

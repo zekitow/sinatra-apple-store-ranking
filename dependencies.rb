@@ -8,7 +8,9 @@ require 'active_support/all'
 ENV['RACK_ENV'] ||= 'development'
 $env = ENV['RACK_ENV']
 
+Dir.glob('./config/initializers/*.rb').each { |file| require file }
 Dir.glob('./lib/requests/*.rb').each { |file| require file }
+Dir.glob('./lib/exceptions/*.rb').each { |file| require file }
 Dir.glob('./lib/services/apple_store_base.rb').each { |file| require file }
 Dir.glob('./lib/{services}/*.rb').each { |file| require file }
 Dir.glob('./app/helpers/*.rb').each { |file| require file }

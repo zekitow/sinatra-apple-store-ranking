@@ -3,13 +3,21 @@ class AppleStoreRanking < AppleStoreBase
 
   def find_by_genre(request)
     response = self.class.get("genreId=#{request.genre_id}")
-    response['topCharts']
+    adam_ids = response['topCharts']
+
+    raise NotFoundException.new('genreId not found.') if adam_ids.nil?
+    
+    adam_ids
   end
 
 
   def find_by_genre_and_monetization_type(request)
     response = self.class.get("genreId=#{request.genre_id}&popId=#{request.monetization_type}")
-    response['selectedChart']
+    adam_ids = response['selectedChart']
+    
+    raise NotFoundException.new('genreId or MonetizationType not found.') if adam_ids.nil?
+    
+    adam_ids
   end
 
 end
