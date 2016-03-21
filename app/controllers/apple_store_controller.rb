@@ -5,10 +5,10 @@ class AppleStoreController < ApplicationController
   #
   get '/apple-store/ranking' do
     begin
-      api_request     = Request::Ranking.new(params)
-      halt_using_if_invalid(api_request)
+      ranking_request = Request::Ranking.new(params)
+      halt_using_if_invalid(ranking_request)
 
-      result = AppleStore.find_by_genre(api_request)
+      result = AppleStore.find_by_genre(ranking_request)
       json(result)
 
     rescue NotFoundException => e
@@ -17,14 +17,15 @@ class AppleStoreController < ApplicationController
   end
 
   #
-  # Search a ranking by specific category (free, grossing or paid)
+  # Search a ranking by specific category (popId)
+  # and monitization type (free, grossing or paid)
   #
   get '/apple-store/category' do
     begin
-      api_request = Request::Category.new(params)
-      halt_using_if_invalid(api_request)
+      category_request = Request::Category.new(params)
+      halt_using_if_invalid(category_request)
 
-      result = AppleStore.find_by_genre_and_monetization_type(api_request)
+      result = AppleStore.find_by_genre_and_monetization_type_or_ranking_position(category_request)
       json(result)
 
     rescue NotFoundException => e

@@ -1,11 +1,12 @@
 module Request
 
   class Category
-    attr_reader :genre_id, :monetization_type
+    attr_reader :genre_id, :monetization_type, :rank_position
 
     def initialize(params)
       @genre_id = params[:genreId]
       @monetization_type = params[:monetizationType]
+      @rank_position     = params[:position]
     end
 
     def valid?

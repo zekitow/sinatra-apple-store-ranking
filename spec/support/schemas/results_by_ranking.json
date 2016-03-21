@@ -1,0 +1,147 @@
+{
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "rank_title": {
+          "type": "string"
+        },
+        "apps": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "icon": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "publisher_name": {
+                  "type": "string"
+                },
+                "app_name": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "float"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "avg_rating": {
+                  "type": "float"
+                },
+                "position": {
+                  "type": "integer"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "rank_title",
+        "apps"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "rank_title": {
+          "type": "string"
+        },
+        "apps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "publisher_name": {
+                "type": "string"
+              },
+              "app_name": {
+                "type": "string"
+              },
+              "price": {
+                "type": "float"
+              },
+              "version": {
+                "type": "string"
+              },
+              "avg_rating": {
+                "type": "float"
+              },
+              "position": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "rank_title": {
+          "type": "string"
+        },
+        "apps": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "icon": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "publisher_name": {
+                  "type": "string"
+                },
+                "app_name": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "float"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "avg_rating": {
+                  "type": "float"
+                },
+                "position": {
+                  "type": "integer"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "required": [
+    "0",
+    "1",
+    "2"
+  ]
+}

@@ -42,7 +42,7 @@ describe AppleStoreController do
 
         it 'should return the content' do
           VCR.use_cassette('valid ranking results') do
-            expect(JSON.parse(subject.body)).to_not be_empty
+            expect(subject).to match_response_schema('results_by_ranking')
           end
         end
       end # and it exists on API
@@ -96,7 +96,7 @@ describe AppleStoreController do
 
         it 'should return the content' do
           VCR.use_cassette('valid category result') do
-            expect(JSON.parse(subject.body)).to_not be_empty
+            expect(subject).to match_response_schema('results_by_category')
           end
         end
 

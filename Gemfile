@@ -17,4 +17,5 @@ group :test do
   gem 'rspec'
   gem 'vcr'
   gem 'webmock'
+  gem 'json-schema'
 end
