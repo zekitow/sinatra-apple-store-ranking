@@ -20,14 +20,14 @@ describe Request::Category do
 
         it { expect(subject.valid?).to be false }
         it { expect(subject.reason).to_not include('genreId is required.') }
-        it { expect(subject.reason).to include('monetizationType is required.') }
+        it { expect(subject.reason).to     include('monetizationType is required.') }
       end
 
       context 'without genreId params' do
         let!(:params) { { monetizationType: '6001' } }
 
         it { expect(subject.valid?).to be false }
-        it { expect(subject.reason).to include('genreId is required.') }
+        it { expect(subject.reason).to     include('genreId is required.') }
         it { expect(subject.reason).to_not include('monetizationType is required.') }
       end
 

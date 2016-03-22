@@ -1,47 +1,96 @@
 {
   "type": "object",
   "properties": {
-    "rank_title": {
-      "type": "string"
-    },
-    "apps": {
+    "top_publishers": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "id": {
+          "publisher_id": {
             "type": "integer"
-          },
-          "icon": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
           },
           "publisher_name": {
             "type": "string"
           },
-          "app_name": {
-            "type": "string"
+          "number_of_apps": {
+            "type": "integer"
           },
-          "price": {
-            "type": "number"
-          },
-          "version": {
-            "type": "string"
-          },
-          "avg_rating": {
-            "type": "float"
+          "app_names": {
+            "type": "array",
+            "items": [
+              {
+                "type": "string"
+              }
+            ]
           },
           "position": {
             "type": "integer"
+          }
+        },
+        "required": [
+          "publisher_id",
+          "publisher_name",
+          "number_of_apps",
+          "app_names",
+          "position"
+        ]
+      },
+      "required": [
+        "0"
+      ]
+    },
+    "ranking": {
+      "type": "object",
+      "properties": {
+        "rank_title": {
+          "type": "string"
+        },
+        "apps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "publisher": {
+                "type": "string"
+              },
+              "publisher_id": {
+                "type": "integer"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "publisher_name": {
+                "type": "string"
+              },
+              "app_name": {
+                "type": "string"
+              },
+              "price": {
+                "type": "float"
+              },
+              "version": {
+                "type": "string"
+              },
+              "avg_rating": {
+                "type": "float"
+              },
+              "position": {
+                "type": "integer"
+              }
+            }
           }
         }
       }
     }
   },
   "required": [
-    "rank_title",
-    "apps"
+    "top_publishers",
+    "ranking"
   ]
 }

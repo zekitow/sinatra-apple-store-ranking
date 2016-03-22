@@ -4,7 +4,6 @@ class AppleStoreBase
   include HTTParty
   headers self.headers
 
-
   private
     def self.headers
       {

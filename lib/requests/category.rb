@@ -1,10 +1,11 @@
 module Request
 
   class Category
-    attr_reader :genre_id, :monetization_type, :rank_position
+    attr_reader :genre_id, :monetization_type, :rank_position, :pop_id
 
     def initialize(params)
-      @genre_id = params[:genreId]
+      @genre_id          = params[:genreId]
+      @pop_id            = params[:popId]
       @monetization_type = params[:monetizationType]
       @rank_position     = params[:position]
     end
@@ -16,7 +17,7 @@ module Request
     def reason
       messages = []
       messages << 'genreId is required.' if @genre_id.blank?
-      messages << 'monetizationType is required.' if @monetization_type.blank?
+      messages << 'monetizationType is required.'   if @monetization_type.blank?
       messages
     end
   end
