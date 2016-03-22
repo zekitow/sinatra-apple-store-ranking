@@ -1,7 +1,9 @@
 class AppleStoreLookupAPI < AppleStoreBase
   base_uri 'https://itunes.apple.com/lookup'
 
-  # Find all aditional info using the Lookup API
+  #
+  # Finds aditional infos, for the given adamIds, using Lookup API
+  #
   def find_all(ids)
     response = self.class.get("?id=#{ids.join(',')}")
     parse_results(response)
@@ -9,7 +11,9 @@ class AppleStoreLookupAPI < AppleStoreBase
 
   protected
 
-    # Filter by the revelant information
+    #
+    # Transcribes the relevant information into Hash
+    #
     def parse_results(result)
       parse_result = []
 
