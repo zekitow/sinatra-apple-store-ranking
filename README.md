@@ -26,10 +26,11 @@ The tests was developed using Rspec, VCR, webmock and json-schema. To run the sc
 
 Then you should see something like:
 
+  ```
     ...................
     Finished in 0.35066 seconds (files took 0.70279 seconds to load)
     19 examples, 0 failures
-
+  ```
 
 ## API Specifications
 
@@ -57,34 +58,37 @@ Then you should see something like:
 ##### Status 422 Body Example
 
 
+  ```json
     {
       "message": [
         "genreId is required.",
         "monetizationType is required."
       ]
     }
-
+  ```
 
 ##### Status 404 Body Examples
 ###### genreId or monetizationType not found
 
-
+  ```json
     {
       "message": "genreId or MonetizationType not found."
     }
-
+  ```
 
 
 ###### Ranking position not found
 
+  ```json
     {
       "message": "Ranking position not found."
     }
-
+  ```
 
 
 ##### Status 200 Body Example
 
+  ```json
     {
       "top_publishers": [
       {
@@ -113,5 +117,4 @@ Then you should see something like:
         ]
       }
     }
-
-
+  ```
