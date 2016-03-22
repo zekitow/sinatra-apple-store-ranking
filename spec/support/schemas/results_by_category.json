@@ -53,9 +53,6 @@
               "id": {
                 "type": "integer"
               },
-              "publisher": {
-                "type": "string"
-              },
               "publisher_id": {
                 "type": "integer"
               },

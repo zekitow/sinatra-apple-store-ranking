@@ -48,11 +48,11 @@ class AppleStore
       top_publishers = []
 
       # group by publishers
-      top_publishers = elements.apps.group_by { |w| w[:publisher] }
+      top_publishers = elements.apps.group_by { |w| w[:publisher_id] }
 
       # map the publishers information
       top_publishers = top_publishers.map  do |k, v|
-        { publisher_id: v[0][:publisher_id], publisher_name: k, number_of_apps: v.size, app_names: v.map {|k,v| k[:app_name] } }
+        { publisher_id: v[0][:publisher_id], publisher_name: v[0][:publisher_name], number_of_apps: v.size, app_names: v.map {|k,v| k[:app_name] } }
       end
 
       # sort publishers by the number_of_apps

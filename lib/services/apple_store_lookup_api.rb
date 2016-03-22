@@ -20,11 +20,10 @@ class AppleStoreLookupAPI < AppleStoreBase
       JSON.parse(result)['results'].each do | node |
         parse_result << {
                 id: node['trackId'],
-                publisher: node['artistName'],
                 publisher_id: node['artistId'],
+                publisher_name: node['artistName'],
                 icon: node['artworkUrl60'],
                 description: node['description'],
-                publisher_name: node['artistName'],
                 app_name: node['trackCensoredName'],
                 app_name: node['trackCensoredName'],
                 price: node['price'],
