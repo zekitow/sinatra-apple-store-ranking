@@ -10,13 +10,17 @@ This API was developed using RVM and Ruby 2.2.2. if you do not have It installed
 
 Clone the project and run the **bundle** command inside the root folder:
 
+  ```
     bundle install
+  ```
 
 ## Starting Sinatra
 
 In terminal, runs the command bellow and visit the url **http://localhost:4567/apple-store/category**
 
+  ```
     ruby app.rb
+  ```
 
 ## Running the tests
 
